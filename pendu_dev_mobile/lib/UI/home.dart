@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'rules.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -25,16 +26,20 @@ class Home extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               _buildButtonWithImageAndText(
+                'leaderboard',
                 'icones/leaderboard.png',
                 'Leaderboard',
               ),
               _buildButtonWithImageAndText(
+                'play',
                 'icones/play.png',
                 'Play',
               ),
               _buildButtonWithImageAndText(
+                'rules',
                 'icones/rules.png',
                 'Rules',
+                context: context,
               ),
             ],
           ),
@@ -43,12 +48,17 @@ class Home extends StatelessWidget {
     );
   }
 
-  Widget _buildButtonWithImageAndText(String imagePath, String textBelow) {
+  Widget _buildButtonWithImageAndText(String page, String imagePath, String textBelow, {BuildContext? context}) {
     return Column(
       children: [
         ElevatedButton(
           onPressed: () {
-            // Action à effectuer lors du clic sur le bouton
+            if (page == 'rules') {
+              Navigator.push(
+                context!,
+                MaterialPageRoute(builder: (context) => Rules()),
+              );
+            }
           },
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(

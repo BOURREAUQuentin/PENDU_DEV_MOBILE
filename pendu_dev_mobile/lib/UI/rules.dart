@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home.dart';
 
 class Rules extends StatelessWidget {
   const Rules({Key? key}) : super(key: key);
@@ -6,12 +7,21 @@ class Rules extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Pendu Dev Mobile')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            ElevatedButton(onPressed:
+              () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Home()),
+                );
+              }
+                , child:
+              Text('Back to Home')
+            ),
             Center( // Ajout du titre centré
               child: Text(
                 'Rules',
