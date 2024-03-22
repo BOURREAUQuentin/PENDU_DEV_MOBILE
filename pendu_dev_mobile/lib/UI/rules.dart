@@ -7,27 +7,21 @@ class Rules extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Rules'),
+        centerTitle: true,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            ElevatedButton(onPressed:
-              () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Home()),
-                );
-              }
-                , child:
-              Text('Back to Home')
-            ),
-            Center( // Ajout du titre centré
-              child: Text(
-                'Rules',
-                style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold), // Taille et style de police du titre
-              ),
-            ),
             SizedBox(height: 80), // Espacement entre le titre et les autres éléments
             Text('Vous avez un nombre limité de tentatives pour deviner le mot secret avant que le dessin du pendu ne soit complété.'),
             SizedBox(height: 20), // Espacement entre les textes

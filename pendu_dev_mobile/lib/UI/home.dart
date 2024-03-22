@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'rules.dart';
+import 'level.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -29,11 +30,13 @@ class Home extends StatelessWidget {
                 'leaderboard',
                 'icones/leaderboard.png',
                 'Leaderboard',
+                context: context,
               ),
               _buildButtonWithImageAndText(
                 'play',
                 'icones/play.png',
                 'Play',
+                context: context,
               ),
               _buildButtonWithImageAndText(
                 'rules',
@@ -53,10 +56,18 @@ class Home extends StatelessWidget {
       children: [
         ElevatedButton(
           onPressed: () {
+            print('Button pressed') ;
+            print('page: $page') ;
             if (page == 'rules') {
               Navigator.push(
                 context!,
                 MaterialPageRoute(builder: (context) => Rules()),
+              );
+            }
+            else if (page == 'play') {
+              Navigator.push(
+                context!,
+                MaterialPageRoute(builder: (context) => Level()),
               );
             }
           },
