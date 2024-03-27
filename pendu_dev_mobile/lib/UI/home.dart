@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'rules.dart';
 import 'level.dart';
+import 'leaderboard.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -68,6 +69,12 @@ class Home extends StatelessWidget {
               Navigator.push(
                 context!,
                 MaterialPageRoute(builder: (context) => Level()),
+              );
+            }
+            else if (page == 'leaderboard') {
+              Navigator.push(
+                context!,
+                MaterialPageRoute(builder: (context) => Leaderboard()),
               );
             }
           },

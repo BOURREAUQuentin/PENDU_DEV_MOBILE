@@ -1,5 +1,6 @@
 import '../model/mot_mystere.dart';
 import 'package:flutter/material.dart';
+import '../database/databaseHelper.dart';
 
 class Jeu extends StatefulWidget {
   final int numLevel;
@@ -85,6 +86,7 @@ class _JeuState extends State<Jeu> {
                             );
                           },
                         );
+                        DatabaseHelper.instance.insertScore(pseudo, numLevel, motMystere.getNbEssais());
                       } else if (motMystere.perdu()) {
                         showDialog(
                           context: context,
