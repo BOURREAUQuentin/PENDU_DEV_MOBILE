@@ -1,7 +1,70 @@
 import 'dart:collection';
-import 'dictionnaire.dart';
+import 'dart:math';
 
 class MotMystere {
+
+  static List<String> mots = [
+    'MANGER',
+    'BOIRE',
+    'HELICOPTERE',
+    'AVION',
+    'VOITURE',
+    'BATEAU',
+    'INFORMATIQUE',
+    'TELEPHONE',
+    'ORDINATEUR',
+    'TABLETTE',
+    'ECRAN',
+    'CLAVIER',
+    'SOURIS',
+    'JAVASCRIPT',
+    'PYTHON',
+    'DART',
+    'FLUTTER',
+    'ANDROID',
+    'WINDOWS',
+    'LINUX',
+    'MACOS',
+    'UBUNTU',
+    'DEBIAN',
+    'FOOTBALL',
+    'BASKETBALL',
+    'TENNIS',
+    'RUGBY',
+    'HANDBALL',
+    'VOLLEYBALL',
+    'BASEBALL',
+    'GOLF',
+    'ATHLETISME',
+    'POWERLIFTING',
+    'HALTEROPHILIE',
+    'CHOCOLAT',
+    'VANILLE',
+    'FRAISE',
+    "AUSTRALIE",
+    "BELGIQUE",
+    "CANADA",
+    "DANEMARK",
+    "ESPAGNE",
+    "FRANCE",
+    "GRECE",
+    "HONGRIE",
+    "ITALIE",
+    "RAVIOLI",
+    "LASAGNE",
+    "PIZZA",
+    "HAMBURGER",
+    "SANDWICH",
+    "KEBAB",
+    "TACOS",
+    "BURRITO",
+    "SUSHI",
+    "NARUTO",
+    "ONE PIECE",
+    "DRAGON BALL",
+    "ATTACK ON TITAN",
+    "DEATH NOTE",
+  ];
 
   static const int FACILE = 1;
   static const int MOYEN = 2;
@@ -23,26 +86,19 @@ class MotMystere {
 
   int nbEerreursMax = 0;
 
+
   //late Dictionnaire dict;
 
   MotMystere(String nomFichier, int longMin, int longMax, int niveau) {
-    //dict = Dictionnaire(nomFichier, longMin, longMax);
-    String motATrouver = "MELISSA";
-    initMotMystere(motATrouver, niveau);
+
+    initMotMystere(niveau);
   }
 
-  void changeParametres(String nomFichier, int longMin, int longMax) {
-    //dict = Dictionnaire(nomFichier, longMin, longMax);
-    //String motATrouver = dict.choisirMot();
-    String motATrouver = "MELISSA";
-    initMotMystere(motATrouver, niveau);
-  }
-
-  void initMotMystere(String motATrouver, int niveau) {
+  void initMotMystere(int niveau) {
+    var i = Random().nextInt(mots.length);
+    this.motATrouver = mots[i];
     this.niveau = niveau;
     nbEssais = 0;
-    //this.motATrouver = Dictionnaire.sansAccents(motATrouver).toUpperCase();
-    this.motATrouver = "MELISSA" ;
     motCrypte = "";
     lettresEssayees = HashSet<String>();
     nbLettresRestantes = 0;
@@ -82,13 +138,8 @@ class MotMystere {
     return niveau;
   }
 
-  void setMotATrouver(String motATrouver) {
-    initMotMystere(motATrouver, niveau);
-  }
-
   void setMotATrouver2() {
-    //initMotMystere(dict.choisirMot(), niveau);
-    initMotMystere("MELISSA", niveau);
+    initMotMystere(niveau);
   }
 
   void setNiveau(int niveau) {

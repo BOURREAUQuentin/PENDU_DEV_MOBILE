@@ -17,9 +17,9 @@ class Rules extends StatelessWidget {
           },
         ),
       ),
-      body: Center(
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(20.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(height: 80), // Espacement entre le titre et les autres éléments
@@ -28,7 +28,9 @@ class Rules extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Il y a 3 niveaux possibles dans le jeu :\nniveau 1 : 2 lettres au départ sont visibles\nniveau 2 : 1 lettre au départ sont visibles\nniveau 3 : Aucune lettre au départ n’est visible'),
+                Expanded(
+                  child: Text('Il y a 3 niveaux possibles dans le jeu :\nniveau 1 : 2 lettres au départ sont visibles\nniveau 2 : 1 lettre au départ sont visibles\nniveau 3 : Aucune lettre au départ n’est visible'),
+                ),
                 SizedBox(width: 20), // Espacement entre le texte et l'image
                 Image.asset(
                   'icones/niveaux.png', // Chemin de l'image
@@ -41,7 +43,9 @@ class Rules extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Si le pendu est complété avant que vous ne deviniez le mot, vous perdez la partie.'),
+                Expanded(
+                  child: Text('Si le pendu est complété avant que vous ne deviniez le mot, vous perdez la partie.'),
+                ),
                 SizedBox(width: 20), // Espacement entre le texte et l'image
                 Image.asset(
                   'icones/gameover.png', // Chemin de l'image
@@ -54,7 +58,9 @@ class Rules extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Si vous devinez le mot avant que le pendu ne soit complété, vous remportez la partie.'),
+                Expanded(
+                  child: Text('Si vous devinez le mot avant que le pendu ne soit complété, vous remportez la partie.'),
+                ),
                 SizedBox(width: 20), // Espacement entre le texte et l'image
                 Image.asset(
                   'icones/win.png', // Chemin de l'image

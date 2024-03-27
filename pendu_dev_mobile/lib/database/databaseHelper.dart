@@ -59,4 +59,9 @@ class DatabaseHelper {
       );
     });
   }
+
+  Future<void> deleteAll() async {
+    final db = await instance.database;
+    await db.delete('pendu');
+  }
 }
