@@ -30,7 +30,7 @@ class Home extends StatelessWidget {
               _buildButtonWithImageAndText(
                 'leaderboard',
                 'icones/leaderboard.png',
-                'Leaderboard',
+                'Historique',
                 context: context,
               ),
               _buildButtonWithImageAndText(

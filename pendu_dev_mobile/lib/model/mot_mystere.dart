@@ -60,10 +60,6 @@ class MotMystere {
     "BURRITO",
     "SUSHI",
     "NARUTO",
-    "ONE PIECE",
-    "DRAGON BALL",
-    "ATTACK ON TITAN",
-    "DEATH NOTE",
   ];
 
   static const int FACILE = 1;
